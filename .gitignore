@@ -1,0 +1,17 @@
+# Lazy.nvim plugin directory
+lazy-lock.json
+
+# System files
+.DS_Store
+*.log
+
+# Neovim generated files
+plugin/packer_compiled.lua
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Local configuration (if any)
+local.lua
