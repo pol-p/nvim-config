@@ -1,0 +1,61 @@
+return {
+  -- Surround text objects - for changing/deleting quotes, brackets, etc.
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Default keymaps:
+        -- ys{motion}{char} - Add surround
+        -- ds{char} - Delete surround  
+        -- cs{target}{replacement} - Change surround
+        -- Example: cs"' changes "hello" to 'hello'
+      })
+    end
+  },
+
+  -- Additional keymaps as a "virtual" plugin
+  {
+    "productivity-keymaps",
+    dir = vim.fn.stdpath("config"), -- Use config directory as source
+    name = "productivity-keymaps",
+    event = "VeryLazy",
+    config = function()
+      -- Duplicate line
+      vim.keymap.set('n', '<leader>d', function() vim.cmd("copy .") end, { desc = "Duplicate line" })
+      
+      -- Clear search highlighting
+      vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<CR>', { desc = "Clear search highlight" })
+      
+      -- Quick save
+      vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = "Save file" })
+      
+      -- Select all
+      vim.keymap.set('n', '<C-a>', 'gg<S-v>G', { desc = "Select all" })
+      
+      -- Move lines in Normal mode (simple J/K)
+      vim.keymap.set('n', 'J', ':move .+1<CR>==', { desc = "Move line down" })
+      vim.keymap.set('n', 'K', ':move .-2<CR>==', { desc = "Move line up" })
+      
+      -- Clear inside keymaps
+      vim.keymap.set('n', '<leader>ci"', 'ci"', { desc = 'Clear inside "quotes"' })
+      vim.keymap.set('n', "<leader>ci'", "ci'", { desc = "Clear inside 'quotes'" })
+      vim.keymap.set('n', '<leader>ci`', 'ci`', { desc = 'Clear inside `backticks`' })
+      vim.keymap.set('n', '<leader>ci(', 'ci(', { desc = 'Clear inside (parentheses)' })
+      vim.keymap.set('n', '<leader>ci)', 'ci)', { desc = 'Clear inside (parentheses)' })
+      vim.keymap.set('n', '<leader>ci[', 'ci[', { desc = 'Clear inside [brackets]' })
+      vim.keymap.set('n', '<leader>ci]', 'ci]', { desc = 'Clear inside [brackets]' })
+      vim.keymap.set('n', '<leader>ci{', 'ci{', { desc = 'Clear inside {braces}' })
+      vim.keymap.set('n', '<leader>ci}', 'ci}', { desc = 'Clear inside {braces}' })
+      vim.keymap.set('n', '<leader>ci<', 'ci<', { desc = 'Clear inside <angle brackets>' })
+      vim.keymap.set('n', '<leader>ci>', 'ci>', { desc = 'Clear inside <angle brackets>' })
+      
+      -- Visual mode keymaps (these work well)
+      vim.keymap.set('v', 'J', ":move '>+1<CR>gv=gv", { desc = "Move selection down" })
+      vim.keymap.set('v', 'K', ":move '<-2<CR>gv=gv", { desc = "Move selection up" })
+      vim.keymap.set('v', '<', '<gv', { desc = "Indent left (stay selected)" })
+      vim.keymap.set('v', '>', '>gv', { desc = "Indent right (stay selected)" })
+    end,
+  },
+}

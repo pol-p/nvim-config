@@ -13,6 +13,8 @@ Una configuración moderna y minimalista de Neovim usando lazy.nvim como gestor 
 - 🔧 **LSP**: [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim) con Mason
 - ✂️ **Snippets**: [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - 🔄 **Autopairs**: Cierre automático de paréntesis y comillas
+- 🚀 **Productividad**: nvim-surround para manipulación de texto
+- ⚡ **Atajos personalizados**: Keymaps optimizados para flujo de trabajo
 
 ## Requisitos
 
@@ -80,7 +82,34 @@ Los plugins se instalarán automáticamente en el primer arranque.
 - `<C-Space>` - Forzar autocompletado
 - `<C-e>` - Cancelar autocompletado
 
-## 🗂️ Estructura
+### Productividad
+- `<leader>d` - Duplicar línea actual
+- `<leader>h` - Limpiar resaltado de búsqueda
+- `<leader>w` - Guardar archivo rápido
+- `<C-a>` - Seleccionar todo
+- `J` - Mover línea/selección hacia abajo
+- `K` - Mover línea/selección hacia arriba
+
+### Manipulación de texto (nvim-surround)
+- `ys{movimiento}{carácter}` - Añadir delimitador alrededor
+- `ds{carácter}` - Eliminar delimitador
+- `cs{origen}{destino}` - Cambiar delimitador
+- Ejemplo: `cs"'` cambia "hola" por 'hola'
+
+### Atajos para limpiar contenido
+- `<leader>ci"` - Limpiar dentro de "comillas dobles"
+- `<leader>ci'` - Limpiar dentro de 'comillas simples'  
+- `<leader>ci`` ` - Limpiar dentro de `backticks`
+- `<leader>ci(` / `<leader>ci)` - Limpiar dentro de (paréntesis)
+- `<leader>ci[` / `<leader>ci]` - Limpiar dentro de [corchetes]
+- `<leader>ci{` / `<leader>ci}` - Limpiar dentro de {llaves}
+- `<leader>ci<` / `<leader>ci>` - Limpiar dentro de <ángulos>
+
+### Modo visual mejorado
+- `J` / `K` - Mover selección arriba/abajo manteniendo selección
+- `<` / `>` - Indentar izquierda/derecha manteniendo selección
+
+## 🏛️ Estructura
 
 ```
 ~/.config/nvim/
@@ -93,6 +122,7 @@ Los plugins se instalarán automáticamente en el primer arranque.
 │       ├── lsp.lua         # LSP y autocompletado
 │       ├── lualine.lua     # Barra de estado
 │       ├── neotree.lua     # Explorador de archivos
+│       ├── productivity.lua # Atajos de productividad
 │       ├── telescope.lua   # Búsqueda fuzzy
 │       └── treesitter.lua  # Sintaxis mejorada
 ├── lazy-lock.json          # Versiones de plugins (generado)
@@ -130,7 +160,7 @@ Edita `ensure_installed` en `lua/plugins/lsp.lua`:
 ensure_installed = {'gopls', 'lua_ls', 'ts_ls', 'pyright'},
 ```
 
-## Solución de problemas
+## ⚙️ Solución de problemas
 
 ### Los plugins no se instalan
 1. Verifica tu conexión a internet
