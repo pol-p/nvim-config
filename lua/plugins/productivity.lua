@@ -34,9 +34,9 @@ return {
       -- Select all
       vim.keymap.set('n', '<C-a>', 'gg<S-v>G', { desc = "Select all" })
       
-      -- Move lines in Normal mode (simple J/K)
-      vim.keymap.set('n', 'J', ':move .+1<CR>==', { desc = "Move line down" })
-      vim.keymap.set('n', 'K', ':move .-2<CR>==', { desc = "Move line up" })
+      -- Move lines in Normal mode (Ctrl+J/K to avoid LSP conflict)
+      vim.keymap.set('n', '<C-j>', ':move .+1<CR>==', { desc = "Move line down" })
+      vim.keymap.set('n', '<C-k>', ':move .-2<CR>==', { desc = "Move line up" })
       
       -- Clear inside keymaps
       vim.keymap.set('n', '<leader>ci"', 'ci"', { desc = 'Clear inside "quotes"' })
@@ -52,8 +52,8 @@ return {
       vim.keymap.set('n', '<leader>ci>', 'ci>', { desc = 'Clear inside <angle brackets>' })
       
       -- Visual mode keymaps (these work well)
-      vim.keymap.set('v', 'J', ":move '>+1<CR>gv=gv", { desc = "Move selection down" })
-      vim.keymap.set('v', 'K', ":move '<-2<CR>gv=gv", { desc = "Move selection up" })
+      vim.keymap.set('v', '<C-j>', ":move '>+1<CR>gv=gv", { desc = "Move selection down" })
+      vim.keymap.set('v', '<C-k>', ":move '<-2<CR>gv=gv", { desc = "Move selection up" })
       vim.keymap.set('v', '<', '<gv', { desc = "Indent left (stay selected)" })
       vim.keymap.set('v', '>', '>gv', { desc = "Indent right (stay selected)" })
     end,

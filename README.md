@@ -87,8 +87,8 @@ Los plugins se instalarán automáticamente en el primer arranque.
 - `<leader>h` - Limpiar resaltado de búsqueda
 - `<leader>w` - Guardar archivo rápido
 - `<C-a>` - Seleccionar todo
-- `J` - Mover línea/selección hacia abajo
-- `K` - Mover línea/selección hacia arriba
+- `<C-j>` - Mover línea/selección hacia abajo
+- `<C-k>` - Mover línea/selección hacia arriba
 
 ### Manipulación de texto (nvim-surround)
 - `ys{movimiento}{carácter}` - Añadir delimitador alrededor
@@ -106,7 +106,7 @@ Los plugins se instalarán automáticamente en el primer arranque.
 - `<leader>ci<` / `<leader>ci>` - Limpiar dentro de <ángulos>
 
 ### Modo visual mejorado
-- `J` / `K` - Mover selección arriba/abajo manteniendo selección
+- `<C-j>` / `<C-k>` - Mover selección arriba/abajo manteniendo selección
 - `<` / `>` - Indentar izquierda/derecha manteniendo selección
 
 ## 🏛️ Estructura
