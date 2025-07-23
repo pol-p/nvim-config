@@ -38,19 +38,6 @@ return {
       vim.keymap.set('n', '<C-j>', ':move .+1<CR>==', { desc = "Move line down" })
       vim.keymap.set('n', '<C-k>', ':move .-2<CR>==', { desc = "Move line up" })
       
-      -- Clear inside keymaps
-      vim.keymap.set('n', '<leader>ci"', 'ci"', { desc = 'Clear inside "quotes"' })
-      vim.keymap.set('n', "<leader>ci'", "ci'", { desc = "Clear inside 'quotes'" })
-      vim.keymap.set('n', '<leader>ci`', 'ci`', { desc = 'Clear inside `backticks`' })
-      vim.keymap.set('n', '<leader>ci(', 'ci(', { desc = 'Clear inside (parentheses)' })
-      vim.keymap.set('n', '<leader>ci)', 'ci)', { desc = 'Clear inside (parentheses)' })
-      vim.keymap.set('n', '<leader>ci[', 'ci[', { desc = 'Clear inside [brackets]' })
-      vim.keymap.set('n', '<leader>ci]', 'ci]', { desc = 'Clear inside [brackets]' })
-      vim.keymap.set('n', '<leader>ci{', 'ci{', { desc = 'Clear inside {braces}' })
-      vim.keymap.set('n', '<leader>ci}', 'ci}', { desc = 'Clear inside {braces}' })
-      vim.keymap.set('n', '<leader>ci<', 'ci<', { desc = 'Clear inside <angle brackets>' })
-      vim.keymap.set('n', '<leader>ci>', 'ci>', { desc = 'Clear inside <angle brackets>' })
-      
       -- Visual mode keymaps (these work well)
       vim.keymap.set('v', '<C-j>', ":move '>+1<CR>gv=gv", { desc = "Move selection down" })
       vim.keymap.set('v', '<C-k>', ":move '<-2<CR>gv=gv", { desc = "Move selection up" })

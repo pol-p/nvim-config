@@ -96,14 +96,12 @@ Los plugins se instalarán automáticamente en el primer arranque.
 - `cs{origen}{destino}` - Cambiar delimitador
 - Ejemplo: `cs"'` cambia "hola" por 'hola'
 
-### Atajos para limpiar contenido
-- `<leader>ci"` - Limpiar dentro de "comillas dobles"
-- `<leader>ci'` - Limpiar dentro de 'comillas simples'  
-- `<leader>ci`` ` - Limpiar dentro de `backticks`
-- `<leader>ci(` / `<leader>ci)` - Limpiar dentro de (paréntesis)
-- `<leader>ci[` / `<leader>ci]` - Limpiar dentro de [corchetes]
-- `<leader>ci{` / `<leader>ci}` - Limpiar dentro de {llaves}
-- `<leader>ci<` / `<leader>ci>` - Limpiar dentro de <ángulos>
+### Comandos nativos de Vim (ya disponibles)
+- `ci"` - **C**ambiar dentro de "comillas" (borra y entra en insert)
+- `di"` - **D**eliminar dentro de "comillas" (solo borra)
+- `yi"` - **C**opiar dentro de "comillas"
+- `vi"` - **S**eleccionar dentro de "comillas"
+- Funciona con: `"` `'` `` ` `` `(` `)` `[` `]` `{` `}` `<` `>`
 
 ### Modo visual mejorado
 - `<C-j>` / `<C-k>` - Mover selección arriba/abajo manteniendo selección
